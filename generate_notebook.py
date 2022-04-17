@@ -39,11 +39,11 @@ cells.append(nbf.new_markdown_cell(preamble_agent))
 
 filenames = [
     "control.py",
-    "defence.py",
-    "expantion.py",
+    "defense.py",
+    "expansion.py",
     "main.py",
     "mining.py",
-    "offence.py",
+    "offense.py",
 ]
 
 for filename in filenames:
