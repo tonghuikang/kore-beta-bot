@@ -1,0 +1,13 @@
+{
+    "id": "huikang/kore-2022-kore-beta-bot",
+    "title": "[Kore 2022] kore-beta-bot",
+    "code_file": "kore-beta-bot.ipynb",
+    "language": "python",
+    "kernel_type": "notebook",
+    "is_private": "true",
+    "enable_gpu": "false",
+    "enable_internet": "true",
+    "dataset_sources": [],
+    "competition_sources": ["c/kore-2022"],
+    "kernel_sources": ["realneuralnetwork/kore-beta-1st-place-solution"]
+  }
