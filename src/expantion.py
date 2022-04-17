@@ -3,9 +3,9 @@ from typing import List
 from collections import defaultdict
 
 # <--->
-from .basic import min_ship_count_for_flight_plan_len
-from .geometry import Point, Convert, PlanRoute, PlanPath
-from .board import Player, BoardRoute, Launch
+from basic import min_ship_count_for_flight_plan_len
+from geometry import Point, Convert, PlanRoute, PlanPath
+from board import Player, BoardRoute, Launch
 
 # <--->
 
@@ -199,4 +199,4 @@ def is_safety_route_to_convert(route_points: List[Point], player: Player):
                 if point in pl.expected_dmg_positions[time]:
                     return False
 
-    return True
+    return True         

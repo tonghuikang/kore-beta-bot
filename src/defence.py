@@ -1,9 +1,9 @@
 import random
 
 # <--->
-from .board import Spawn, Player, Launch
-from .helpers import find_shortcut_routes
-from .logger import logger
+from board import Spawn, Player, Launch
+from helpers import find_shortcut_routes
+from logger import logger
 
 # <--->
 

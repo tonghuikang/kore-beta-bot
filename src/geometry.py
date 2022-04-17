@@ -2,7 +2,7 @@ import numpy as np
 from typing import Tuple, List, Generator
 
 # <--->
-from .basic import Obj, cached_call, cached_property, min_ship_count_for_flight_plan_len
+from basic import Obj, cached_call, cached_property, min_ship_count_for_flight_plan_len
 
 # <--->
 

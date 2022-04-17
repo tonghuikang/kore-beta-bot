@@ -1,11 +1,11 @@
 # <--->
-from .board import Board
-from .logger import logger, init_logger
-from .offence import capture_shipyards
-from .defence import defend_shipyards
-from .expantion import expand
-from .mining import mine
-from .control import spawn, greedy_spawn, adjacent_attack, direct_attack
+from board import Board
+from logger import logger, init_logger
+from offence import capture_shipyards
+from defence import defend_shipyards
+from expantion import expand
+from mining import mine
+from control import spawn, greedy_spawn, adjacent_attack, direct_attack
 
 # <--->
 
