@@ -1,6 +1,7 @@
 # <--->
-from board import Board
-from logger import logger, init_logger
+from core.board import Board
+from core.logger import logger, init_logger
+
 from offence import capture_shipyards
 from defence import defend_shipyards
 from expantion import expand

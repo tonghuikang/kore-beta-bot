@@ -6,7 +6,7 @@ from kaggle_environments.envs.kore_fleets.helpers import Configuration
 
 
 # <--->
-from basic import (
+from .basic import (
     Obj,
     collection_rate_for_ship_count,
     max_ships_to_spawn,
@@ -14,7 +14,7 @@ from basic import (
     create_spawn_ships_command,
     create_launch_fleet_command,
 )
-from geometry import (
+from .geometry import (
     Field,
     Action,
     Point,
@@ -25,7 +25,7 @@ from geometry import (
     PlanRoute,
     GAME_ID_TO_ACTION,
 )
-from logger import logger
+from .logger import logger
 
 # <--->
 

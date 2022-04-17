@@ -3,8 +3,8 @@ from typing import List
 
 
 # <--->
-from geometry import Point
-from board import Board, Player, BoardRoute, PlanRoute
+from .geometry import Point
+from .board import Board, Player, BoardRoute, PlanRoute
 
 # <--->
 

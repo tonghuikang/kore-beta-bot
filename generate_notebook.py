@@ -20,7 +20,10 @@ cells.append(nbf.new_markdown_cell(preamble_intro))
 
 
 init_code = """\
-!pip install --user kaggle-environments > /dev/null\
+!pip install --user kaggle-environments > /dev/null
+!mkdir core/
+!touch __init__.py
+!touch core/__init__.py
 """
 cells.append(nbf.new_code_cell(init_code, metadata={"_kg_hide-input": True}))
 
@@ -35,14 +38,9 @@ cells.append(nbf.new_markdown_cell(preamble_agent))
 
 
 filenames = [
-    "basic.py",
-    "board.py",
     "control.py",
     "defence.py",
     "expantion.py",
-    "geometry.py",
-    "helpers.py",
-    "logger.py",
     "main.py",
     "mining.py",
     "offence.py",
@@ -56,6 +54,20 @@ for filename in filenames:
     cells.append(cell)
 
 
+filenames = [
+    "basic.py",
+    "board.py",
+    "geometry.py",
+    "helpers.py",
+    "logger.py",
+]
+
+for filename in filenames:
+    savefile_cell_magic = f"%%writefile core/{filename}\n"
+    with open("src/core/" + filename, "r") as f:
+        content = savefile_cell_magic + f.read()
+    cell = nbf.new_code_cell(content, metadata={"_kg_hide-input": True})
+    cells.append(cell)
 
 
 

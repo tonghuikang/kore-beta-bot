@@ -4,10 +4,10 @@ import numpy as np
 from collections import defaultdict
 
 # <--->
-from basic import max_ships_to_spawn
-from board import Player, Shipyard, Launch
-from helpers import find_shortcut_routes
-from logger import logger
+from core.basic import max_ships_to_spawn
+from core.board import Player, Shipyard, Launch
+from core.helpers import find_shortcut_routes
+from core.logger import logger
 
 # <--->
 

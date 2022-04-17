@@ -3,9 +3,9 @@ from typing import List
 from collections import defaultdict
 
 # <--->
-from basic import min_ship_count_for_flight_plan_len
-from geometry import Point, Convert, PlanRoute, PlanPath
-from board import Player, BoardRoute, Launch
+from core.basic import min_ship_count_for_flight_plan_len
+from core.geometry import Point, Convert, PlanRoute, PlanPath
+from core.board import Player, BoardRoute, Launch
 
 # <--->
 

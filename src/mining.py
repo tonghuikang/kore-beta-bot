@@ -4,9 +4,9 @@ from typing import List
 from collections import defaultdict
 
 # <--->
-from geometry import PlanRoute
-from board import Player, BoardRoute, Launch, Shipyard
-from helpers import is_intercept_route
+from core.geometry import PlanRoute
+from core.board import Player, BoardRoute, Launch, Shipyard
+from core.helpers import is_intercept_route
 
 # <--->
 

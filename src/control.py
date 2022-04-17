@@ -1,10 +1,10 @@
 import random
 
 # <--->
-from geometry import PlanRoute
-from board import Player, Launch, Spawn, Fleet, FleetPointer, BoardRoute
-from helpers import is_invitable_victory, find_shortcut_routes
-from logger import logger
+from core.geometry import PlanRoute
+from core.board import Player, Launch, Spawn, Fleet, FleetPointer, BoardRoute
+from core.helpers import is_invitable_victory, find_shortcut_routes
+from core.logger import logger
 
 # <--->
 
