@@ -21,9 +21,11 @@ cells.append(nbf.new_markdown_cell(preamble_intro))
 
 init_code = """\
 !pip install --user kaggle-environments > /dev/null
-!mkdir core/
-!touch __init__.py
-!touch core/__init__.py
+!mkdir -p src/
+!mkdir -p src/core/
+!touch src/__init__.py
+!touch src/__init__.py
+!touch src/core/__init__.py
 """
 cells.append(nbf.new_code_cell(init_code, metadata={"_kg_hide-input": True}))
 
@@ -36,7 +38,16 @@ preamble_agent = """\
 """
 cells.append(nbf.new_markdown_cell(preamble_agent))
 
+def writefiles(prefix, filenames):
+    for filename in filenames:
+        savefile_cell_magic = f"%%writefile {prefix}{filename}\n"
+        with open(prefix + filename, "r") as f:
+            content = savefile_cell_magic + f.read()
+        cell = nbf.new_code_cell(content, metadata={"_kg_hide-input": True, "jupyter": {"outputs_hidden":True}})
+        cells.append(cell)
 
+
+prefix = "src/"
 filenames = [
     "control.py",
     "defense.py",
@@ -45,15 +56,10 @@ filenames = [
     "mining.py",
     "offense.py",
 ]
-
-for filename in filenames:
-    savefile_cell_magic = f"%%writefile {filename}\n"
-    with open("src/" + filename, "r") as f:
-        content = savefile_cell_magic + f.read()
-    cell = nbf.new_code_cell(content, metadata={"_kg_hide-input": True})
-    cells.append(cell)
+writefiles(prefix, filenames)
 
 
+prefix = "src/core/"
 filenames = [
     "basic.py",
     "board.py",
@@ -61,13 +67,9 @@ filenames = [
     "helpers.py",
     "logger.py",
 ]
+writefiles(prefix, filenames)
 
-for filename in filenames:
-    savefile_cell_magic = f"%%writefile core/{filename}\n"
-    with open("src/core/" + filename, "r") as f:
-        content = savefile_cell_magic + f.read()
-    cell = nbf.new_code_cell(content, metadata={"_kg_hide-input": True})
-    cells.append(cell)
+
 
 
 
@@ -79,6 +81,12 @@ cells.append(nbf.new_markdown_cell(preamble_rendering))
 
 
 runner_code = """\
+!mkdir -p ref
+!cp -r ../input/kore-beta-1st-place-solution/* ref/\
+"""
+cells.append(nbf.new_code_cell(runner_code, metadata={"_kg_hide-input": True}))
+
+runner_code = """\
 from kaggle_environments import make
 env = make("kore_fleets", debug=True)
 print(env.name, env.version)\
@@ -88,7 +96,7 @@ cells.append(nbf.new_code_cell(runner_code, metadata={"_kg_hide-input": True}))
 
 runner_code = """\
 from kaggle_environments.envs.kore_fleets.starter_bots.python.main import agent
-env.run([agent, "/kaggle/working/main.py"])
+env.run(["src/main.py", "random"])
 env.render(mode="ipython", width=900, height=800)\
 """
 cells.append(nbf.new_code_cell(runner_code, metadata={"_kg_hide-input": True, "jupyter": {"outputs_hidden":True}}))
