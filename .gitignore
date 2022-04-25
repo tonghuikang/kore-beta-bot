@@ -1,3 +1,4 @@
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -131,3 +132,9 @@ dmypy.json
 .DS_Store
 *.tar.gz
 *.ipynb
+
+*.gif
+*.mp4
+*.mp3
+
+!gameplay.gif
